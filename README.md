@@ -2,6 +2,8 @@
 
 A simple, responsive starter template for an Advent Calendar website.
 
+Demo: [advent-calendar](https://quaese.github.io/advent-calendar/)
+
 **Project Structure (key files)**
 - `index.html` — Entry point of the site; loads CSS and JavaScript from `assets/`.
 - `assets/css/style.css` — Main styling (imports `variables.css` for color standards and variables).
