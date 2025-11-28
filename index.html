@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="assets/images/calender-24th.svg" />
+    <title>Advent Calendar</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/scripts/global.js" defer></script>
+    <script src="assets/scripts/events.js" defer></script>
+    <script src="assets/scripts/adventcalendar.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Advent Calendar</h1>
+        </div>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Willkommen</h2>
+            <p>A little JavaScript gimmick — an Advent calendar.</p>
+            <div class="adventcalendar-content">
+
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Advent fun</p>
+        </div>
+    </footer>
+
+    <!-- Templates for Overlay and Modal Dialog -->
+    <div class="qp-overlay"></div>
+    <div id="qp-modal-dialog" class="qp-modal-dialog">
+        <div class="qp-modal-dialog-content">
+            <div class="qp-modal-dialog-titlebar">
+                <h2 class="qp-modal-dialog-title"></h2>
+                <span class="qp-modal-dialog-close">&times;</span>
+            </div>
+            <div class="qp-modal-dialog-body">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

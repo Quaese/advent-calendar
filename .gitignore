@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.prettierignore
+.eslintignore
+
+# OS
+Thumbs.db
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+tmp/
+temp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.Python
+
+# Node/npm
+.npm
+.node-gyp
+
+# Testing
+coverage/
+.nyc_output/
+
+# Bundle analyzer
+dist-stats.json
+
+# Misc
+.DS_Store
+Thumbs.db
