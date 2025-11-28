@@ -36,7 +36,7 @@ const date = {
     };
 ```
 
-the current date as `Testing date`.
+the current date as `Testing date`. And adjust `validMonth` to the chosen test month (0-based).
 
 **Developer Notes & Tips**
 - CSS Variables: Modify `assets/css/variables.css` to change the color scheme and spacing globally.

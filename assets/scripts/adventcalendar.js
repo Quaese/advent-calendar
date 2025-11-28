@@ -143,7 +143,7 @@
     const date = {
         // now: new Date(2025, 10, 15), // Testing date (November 15, 2025) -- adjust as needed
         now: new Date(), // use this in production
-        validMonth: 10, // December (0-based index). NOTE: original code used 10 -> November? Keep as provided.
+        validMonth: 11, // December (0-based index). NOTE: original code used 10 -> November? Keep as provided.
     };
 
     // Event handler for clicking a door.
