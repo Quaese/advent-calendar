@@ -1,13 +1,12 @@
-(() => {
+((options = {
+    testMode: false,
+    debug: false,
+    symbol: "qp"
+}) => {
   // adventcalendar.js
   
-  // Toggle debug logging
-  const debug = false;
-  // Test mode
-  const testMode = true;
-  
   // Get access to events via global Symbol (defined in global.js)
-  let qp = Symbol.for("qp");
+  let qp = Symbol.for(options.symbol);
 
   // Array of questions/solutions to show when a door is opened.
   // Mixed German content; each entry has a question and a solution string.
@@ -144,7 +143,7 @@
   };
 
   // For testing purposes the date can be fixed; validMonth is 0-based (11 for December)
-  const date = testMode
+  const date = options.testMode
     ? {
         now: new Date(2025, 10, 15), // Testing date (November 15, 2025) -- adjust as needed
         validMonth: new Date(2025, 10, 15).getMonth(), // December (0-based index). NOTE: original code used 10 -> November? Keep as provided.
@@ -208,7 +207,7 @@
   // Draw all created square placements as DOM doors.
   // placedSquares is an array of {x, y} positions
   const drawAll = (placedSquares) => {
-    debug && console.log("Draw all squares:", placedSquares);
+    options.debug && console.log("Draw all squares:", placedSquares);
 
     for (let i = 0; i < placedSquares.length; i++) {
       const square = placedSquares[i];
@@ -259,7 +258,7 @@
     // Reconfigure calendar dims based on container current size
     calendar = configureCalendar(container);
 
-    if (testMode) {
+    if (options.testMode) {
       const testModeImg = document.createElement("img");
 
       testModeImg.src = "assets/images/badge-test-mode.png";
@@ -268,20 +267,20 @@
       container.appendChild(testModeImg);
     }
 
-    debug &&
+    options.debug &&
       console.log(
         `Building advent calendar with calendar.container.width=${calendar.container.width}, calendar.container.height=${calendar.container.height}, calendar.square.dim=${calendar.square.dim}`
       );
 
     let placedSquares = []; // positions of successfully placed squares
     let i = 0; // count of placed doors
-    debug && console.log("Starte...");
+    options.debug && console.log("Starte...");
 
     // Recursive function that tries to place doors until calendar.doors reached
     function placeNext() {
       if (i >= calendar.doors) {
         // All doors placed: render them
-        debug && console.log(`Fertig ${i}: ${placedSquares.length} / ${calendar.doors} platziert.`);
+        options.debug && console.log(`Fertig ${i}: ${placedSquares.length} / ${calendar.doors} platziert.`);
         drawAll(placedSquares);
         return;
       }
@@ -306,7 +305,7 @@
       }
       if (!placedThis) {
         // If placement failed after many attempts, increase the grid density (limit) and retry
-        debug &&
+        options.debug &&
           console.log(
             `Abbruch: konnte Quadrat ${
               i + 1
@@ -362,4 +361,8 @@
 
   // Build the calendar once DOM content is loaded
   window.addEventListener("DOMContentLoaded", initAdventsCalendar);
-})();
+})({
+    testMode: true,
+    debug: true,
+    symbol: "qp",
+});

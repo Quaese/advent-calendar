@@ -28,18 +28,22 @@ Then open in your browser: `http://localhost:8000`
 (Note: `python3 -m http.server` is for quick preview only. With JS/modules enabled, the site typically works well locally.)
 
 ## Mock/Test Data
-For testing purposes, set `testMode` in  `advent-calendar.js` to `true`.
+For testing purposes, set `testMode` in  options object to `true`.
 
 ```javascript
-(() => {
+(((options = {
+    testMode: false,
+    debug: false,
+    symbol: "qp"
+}) => {
   // adventcalendar.js
   
-  // Toggle debug logging
-  const debug = false;
-  // Test mode
-  const testMode = true;
-  
   // ...
+})({
+    testMode: true,
+    debug: true,
+    symbol: "qp",
+});
 ```
 
 ## Developer Notes & Tips
