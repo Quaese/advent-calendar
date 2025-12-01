@@ -362,7 +362,7 @@
   // Build the calendar once DOM content is loaded
   window.addEventListener("DOMContentLoaded", initAdventsCalendar);
 })({
-    testMode: true,
-    debug: true,
+    testMode: false,
+    debug: false,
     symbol: "qp",
 });
